@@ -257,3 +257,44 @@ Jawab: Untuk UI nya tidak berubah tetapi disini membuat kode baru untuk penangan
 ![alt text](assets/P7S13.png)
 
 Capture hasil praktikum Anda berupa GIF dan lampirkan di README. Lalu lakukan commit dengan pesan "W11: Soal 14".
+
+#### Praktikum 8: Navigation route dengan Future Function
+#### Langkah 1: Buat file baru navigation_first.dart
+Buatlah file baru ini di project lib Anda.
+
+#### Langkah 2: Isi kode navigation_first.dart
+![alt text](assets/P8L2.png)
+
+#### Soal 15
+Tambahkan nama panggilan Anda pada tiap properti title sebagai identitas pekerjaan Anda.
+![alt text](assets/P8L2.png)
+Silakan ganti dengan warna tema favorit Anda.
+
+#### Langkah 3: Tambah method di class _NavigationFirstState
+Tambahkan method ini.
+![alt text](assets/P8L3.png)
+
+#### Langkah 4: Buat file baru navigation_second.dart
+Buat file baru ini di project lib Anda. Silakan jika ingin mengelompokkan view menjadi satu folder dan sesuaikan impor yang dibutuhkan.
+
+#### Langkah 5: Buat class NavigationSecond dengan StatefulWidget
+![alt text](assets/P8L5.png)
+
+#### Langkah 6: Edit main.dart
+Lakukan edit properti home.
+![alt text](assets/P8L6.png)
+
+#### Langkah 7: Run
+Lakukan run, jika terjadi error silakan diperbaiki.
+![alt text](assets/P8L71.png)
+![alt text](assets/P8L72.png)
+![alt text](assets/P8L73.png)
+![alt text](assets/P8L74.png)
+
+#### Soal 16
+Cobalah klik setiap button, apa yang terjadi ? Mengapa demikian ?
+Gantilah 3 warna pada langkah 5 dengan warna favorit Anda!
+
+Jawab: Ketika kamu mengklik tombol di NavigationSecond, seperti tombol "Amber", "Purple", atau "Yellow", setiap tombol akan mengubah nilai variabel color menjadi warna tertentu (misalnya Colors.amber.shade200 untuk tombol "Amber") dan kemudian kembali ke NavigationFirst dengan mengirimkan nilai warna tersebut menggunakan Navigator.pop(context, color). Di NavigationFirst, nilai warna yang dikirimkan akan diterima oleh Navigator.push() dan mengubah background color aplikasi menggunakan setState(), sesuai dengan warna yang dipilih di NavigationSecond. Namun, terdapat bug di NavigationSecond, di mana variabel color tidak diberi nilai awal, yang bisa menyebabkan error. Seharusnya, variabel color diberi nilai default (misalnya color = Colors.green) untuk menghindari masalah tersebut. Dengan perbaikan ini, setelah menekan tombol di NavigationSecond, aplikasi akan kembali ke NavigationFirst dengan background yang berubah sesuai dengan pilihan warna dari tombol yang ditekan.
+
+Capture hasil praktikum Anda berupa GIF dan lampirkan di README. Lalu lakukan commit dengan pesan "W11: Soal 16".

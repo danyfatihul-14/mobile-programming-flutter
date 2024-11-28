@@ -103,3 +103,19 @@ Jelaskan maksud kode langkah 2 tersebut!
 
 Capture hasil praktikum Anda berupa GIF dan lampirkan di README. Lalu lakukan commit dengan pesan "W11: Soal 5".
 ![alt text](assets/P3L4.png)
+
+#### Langkah 5: Ganti method calculate()
+Gantilah isi code method calculate() seperti kode berikut, atau Anda dapat membuat calculate2()
+![alt text](assets/P3L5.png)
+
+#### Langkah 6: Pindah ke onPressed()
+Ganti menjadi kode seperti berikut.
+![alt text](assets/P3L6.png)
+
+#### Soal 6
+Jelaskan maksud perbedaan kode langkah 2 dengan langkah 5-6 tersebut!
+* Kode pertama tidak memiliki penanganan kesalahan, sehingga jika terjadi kesalahan dalam operasi asinkron, aplikasi mungkin mengalami crash atau perilaku tidak terduga.
+* Kode kedua menggunakan blok try-catch untuk menangani kesalahan dan menyelesaikan Completer dengan error, memungkinkan penanganan kesalahan lebih baik.
+
+Capture hasil praktikum Anda berupa GIF dan lampirkan di README. Lalu lakukan commit dengan pesan "W11: Soal 6".
+![alt text](assets/P3S6.png)

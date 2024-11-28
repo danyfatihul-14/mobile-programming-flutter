@@ -50,14 +50,12 @@ class _FuturePageState extends State<FuturePage> {
                 // count();
                 // setState(() {});
                 getNumber().then((value) {
-                  // result = value.body.toString().substring(0, 450);
+                  result = value.toString();
                   setState(() {
                     result = value.toString();
                   });
-                }
-                ).catchError((_) {
+                }).catchError((e) {
                   result = 'An error occurred';
-                  setState(() {});
                 });
               },
             ),
@@ -113,7 +111,11 @@ class _FuturePageState extends State<FuturePage> {
   }
 
   Future calculate() async {
-    await Future.delayed(const Duration(seconds: 5));
-    completer.complete(42);
+    try {
+      await new Future.delayed(const Duration(seconds: 5));
+      completer.complete(42);
+    } catch (_) {
+      completer.completeError({});
+    }
   }
 }

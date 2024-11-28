@@ -47,17 +47,16 @@ class _FuturePageState extends State<FuturePage> {
             ElevatedButton(
               child: const Text('Go!'),
               onPressed: () {
-                returnFG();
-                // count();
-                // setState(() {});
-                // getNumber().then((value) {
-                //   result = value.toString();
-                //   setState(() {
-                //     result = value.toString();
-                //   });
-                // }).catchError((e) {
-                //   result = 'An error occurred';
-                // });
+                returnError()
+                .then((value){
+                  setState(() {
+                    result = value.toString();
+                  });
+                }).catchError((onError){
+                  setState(() {
+                    result = onError.toString();
+                  });
+                }).whenComplete(() => print('Complete'));
               },
             ),
             const Spacer(),
@@ -121,7 +120,7 @@ class _FuturePageState extends State<FuturePage> {
   }
 
   void returnFG() {
-    final futures = Future.wait<int>([
+    Future.wait<int>([
       returnOneAsync(),
       returnTwoAsync(),
       returnThreeAsync(),
@@ -140,5 +139,10 @@ class _FuturePageState extends State<FuturePage> {
         result = total.toString();
       });
     });
+  }
+
+  Future returnError() async {
+    await Future.delayed(const Duration(seconds: 2));
+    throw Exception('Something terible happened!');
   }
 }

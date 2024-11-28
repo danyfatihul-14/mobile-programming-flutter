@@ -145,3 +145,19 @@ Anda dapat menggunakan FutureGroup dengan Future.wait seperti kode berikut.
 Jelaskan maksud perbedaan kode langkah 1 dan 4!
 jawab: Perbedaan antara kode yang menggunakan FutureGroup dan Future.wait terletak pada cara mengelola beberapa operasi asinkron. FutureGroup adalah kelas khusus, mungkin berasal dari paket eksternal, yang memberikan kontrol lebih besar atas kelompok Future, memungkinkan penambahan Future secara dinamis dan pengelolaan hasil secara individual. Sementara itu, Future.wait adalah metode bawaan Dart yang menerima daftar Future dan mengembalikan sebuah Future baru yang selesai ketika semua Future dalam daftar selesai, dengan hasilnya dikumpulkan dalam sebuah List. FutureGroup lebih cocok untuk skenario yang membutuhkan kontrol lebih rinci, sedangkan Future.wait lebih sederhana dan langsung digunakan ketika hanya perlu menunggu beberapa Future selesai dan mengumpulkan hasilnya.
 
+### Praktikum 5: Menangani Respon Error pada Async Code
+#### Langkah 1: Buka file main.dart
+Tambahkan method ini ke dalam class _FuturePageState
+![alt text](assets/P5L1.png)
+
+#### Langkah 2: ElevatedButton
+Ganti dengan kode berikut
+![alt text](assets/P5L2.png)
+
+#### Langkah 3: Run
+Lakukan run dan klik tombol GO! maka akan menghasilkan seperti gambar berikut.
+![alt text](assets/P5L3.png)
+
+#### Soal 9
+Capture hasil praktikum Anda berupa GIF dan lampirkan di README. Lalu lakukan commit dengan pesan "W11: Soal 9".
+![alt text](assets/P5L3.png)

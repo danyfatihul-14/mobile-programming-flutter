@@ -119,3 +119,21 @@ Jelaskan maksud perbedaan kode langkah 2 dengan langkah 5-6 tersebut!
 
 Capture hasil praktikum Anda berupa GIF dan lampirkan di README. Lalu lakukan commit dengan pesan "W11: Soal 6".
 ![alt text](assets/P3S6.png)
+
+### Praktikum 4: Memanggil Future secara paralel
+#### Langkah 1
+Tambahkan method ini ke dalam class _FuturePageState
+![alt text](assets/P4L1.png)
+
+#### Langkah 2: Edit onPressed()
+Anda bisa hapus atau comment kode sebelumnya, kemudian panggil method dari langkah 1 tersebut.
+![alt text](assets/P4L2.png)
+
+#### Langkah 3: Run
+Anda akan melihat hasilnya dalam 3 detik berupa angka 6 lebih cepat dibandingkan praktikum sebelumnya menunggu sampai 9 detik.
+![alt text](assets/P4L3.png)
+
+#### Soal 7
+Capture hasil praktikum Anda berupa GIF dan lampirkan di README. Lalu lakukan commit dengan pesan "W11: Soal 7".
+![alt text](assets/P4L3.png)
+

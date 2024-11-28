@@ -161,3 +161,16 @@ Lakukan run dan klik tombol GO! maka akan menghasilkan seperti gambar berikut.
 #### Soal 9
 Capture hasil praktikum Anda berupa GIF dan lampirkan di README. Lalu lakukan commit dengan pesan "W11: Soal 9".
 ![alt text](assets/P5L3.png)
+
+#### Langkah 4: Tambah method handleError()
+Tambahkan kode ini di dalam class _FutureStatePage
+![alt text](assets/P5L4.png)
+
+#### Soal 10
+Panggil method handleError() tersebut di ElevatedButton
+![alt text](assets/P5S10.png) 
+lalu run. Apa hasilnya? 
+![alt text](assets/P5S101.png)
+Jelaskan perbedaan kode langkah 1 dan 4!
+jawab: Perbedaan utama antara kedua kode tersebut terletak pada penanganan kesalahan. Kode pertama (returnError) hanya melemparkan exception tanpa penanganan, yang akan menyebabkan aplikasi terhenti jika terjadi error. Sementara kode kedua (handleError) menangani kesalahan dengan blok try-catch, di mana jika returnError melemparkan exception, kesalahan tersebut akan ditangkap dan ditangani dengan menampilkan pesan error melalui setState, yang memperbarui UI. Selain itu, kode kedua menggunakan blok finally, yang menjamin eksekusi kode setelah operasi selesai, baik berhasil maupun error, seperti mencetak "Complete". Dengan demikian, kode kedua lebih robust karena menangani kesalahan dan memastikan kelanjutan eksekusi program tanpa menyebabkan crash aplikasi.
+

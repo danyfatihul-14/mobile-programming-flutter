@@ -174,3 +174,49 @@ lalu run. Apa hasilnya?
 Jelaskan perbedaan kode langkah 1 dan 4!
 jawab: Perbedaan utama antara kedua kode tersebut terletak pada penanganan kesalahan. Kode pertama (returnError) hanya melemparkan exception tanpa penanganan, yang akan menyebabkan aplikasi terhenti jika terjadi error. Sementara kode kedua (handleError) menangani kesalahan dengan blok try-catch, di mana jika returnError melemparkan exception, kesalahan tersebut akan ditangkap dan ditangani dengan menampilkan pesan error melalui setState, yang memperbarui UI. Selain itu, kode kedua menggunakan blok finally, yang menjamin eksekusi kode setelah operasi selesai, baik berhasil maupun error, seperti mencetak "Complete". Dengan demikian, kode kedua lebih robust karena menangani kesalahan dan memastikan kelanjutan eksekusi program tanpa menyebabkan crash aplikasi.
 
+### Praktikum 6: Menggunakan Future dengan StatefulWidget
+#### Langkah 1: install plugin geolocator
+Tambahkan plugin geolocator dengan mengetik perintah berikut di terminal.
+```text
+flutter pub add geolocator
+```
+
+#### Langkah 2: Tambah permission GPS
+Jika Anda menargetkan untuk platform Android, maka tambahkan baris kode berikut di file android/app/src/main/androidmanifest.xml
+![alt text](assets/P6L2.png)
+
+#### Langkah 3: Buat file geolocation.dart
+Tambahkan file baru ini di folder lib project Anda.
+
+#### Langkah 4: Buat StatefulWidget
+Buat class LocationScreen di dalam file geolocation.dart
+![alt text](assets/P6L4.png)
+
+#### Langkah 5: Isi kode geolocation.dart
+![alt text](assets/P6L5.png)
+
+#### Soal 11
+Tambahkan nama panggilan Anda pada tiap properti title sebagai identitas pekerjaan Anda.
+![alt text](assets/P6S11.png)
+
+#### Langkah 6: Edit main.dart
+Panggil screen baru tersebut di file main Anda seperti berikut.
+![alt text](assets/P6L6.png)
+
+#### Langkah 7: Run
+Run project Anda di device atau emulator (bukan browser), maka akan tampil seperti berikut ini.
+jawab: mohon maaf saya run pakai chrome saya pakai hp dan emu terdapat masalah tentang katlin yang versinya jauh lalu saya rubah versi 1.9.0 tidak bisa di run
+![alt text](assets/P6L7.png)
+
+#### Langkah 8: Tambahkan animasi loading
+Tambahkan widget loading seperti kode berikut. Lalu hot restart, perhatikan perubahannya.
+![alt text](assets/P6L8.png)
+
+#### Soal 12
+Jika Anda tidak melihat animasi loading tampil, kemungkinan itu berjalan sangat cepat. Tambahkan delay pada method getPosition() dengan kode await Future.delayed(const Duration(seconds: 3));
+![alt text](assets/P6S12.png)
+![alt text](assets/P6S121.png)
+Apakah Anda mendapatkan koordinat GPS ketika run di browser? Mengapa demikian?
+Saat menjalankan aplikasi Flutter di browser, Anda tidak akan mendapatkan koordinat GPS karena browser tidak mendukung akses langsung ke hardware GPS perangkat. Geolocator, seperti banyak plugin lainnya, bergantung pada API yang menyediakan akses ke sensor perangkat (seperti GPS pada perangkat mobile atau tablet). Namun, browser tidak memberikan akses langsung ke informasi lokasi perangkat fisik melalui API yang sama yang digunakan di perangkat Android atau iOS.
+
+Capture hasil praktikum Anda berupa GIF dan lampirkan di README. Lalu lakukan commit dengan pesan "W11: Soal 12"

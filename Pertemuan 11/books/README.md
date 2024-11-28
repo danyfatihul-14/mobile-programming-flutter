@@ -258,7 +258,7 @@ Jawab: Untuk UI nya tidak berubah tetapi disini membuat kode baru untuk penangan
 
 Capture hasil praktikum Anda berupa GIF dan lampirkan di README. Lalu lakukan commit dengan pesan "W11: Soal 14".
 
-#### Praktikum 8: Navigation route dengan Future Function
+### Praktikum 8: Navigation route dengan Future Function
 #### Langkah 1: Buat file baru navigation_first.dart
 Buatlah file baru ini di project lib Anda.
 
@@ -298,3 +298,33 @@ Gantilah 3 warna pada langkah 5 dengan warna favorit Anda!
 Jawab: Ketika kamu mengklik tombol di NavigationSecond, seperti tombol "Amber", "Purple", atau "Yellow", setiap tombol akan mengubah nilai variabel color menjadi warna tertentu (misalnya Colors.amber.shade200 untuk tombol "Amber") dan kemudian kembali ke NavigationFirst dengan mengirimkan nilai warna tersebut menggunakan Navigator.pop(context, color). Di NavigationFirst, nilai warna yang dikirimkan akan diterima oleh Navigator.push() dan mengubah background color aplikasi menggunakan setState(), sesuai dengan warna yang dipilih di NavigationSecond. Namun, terdapat bug di NavigationSecond, di mana variabel color tidak diberi nilai awal, yang bisa menyebabkan error. Seharusnya, variabel color diberi nilai default (misalnya color = Colors.green) untuk menghindari masalah tersebut. Dengan perbaikan ini, setelah menekan tombol di NavigationSecond, aplikasi akan kembali ke NavigationFirst dengan background yang berubah sesuai dengan pilihan warna dari tombol yang ditekan.
 
 Capture hasil praktikum Anda berupa GIF dan lampirkan di README. Lalu lakukan commit dengan pesan "W11: Soal 16".
+
+### Praktikum 9: Memanfaatkan async/await dengan Widget Dialog
+#### Langkah 1: Buat file baru navigation_dialog.dart
+Buat file dart baru di folder lib project Anda.
+
+#### Langkah 2: Isi kode navigation_dialog.dart
+![alt text](assets/P9L2.png)
+
+#### Langkah 3: Tambah method async
+![alt text](assets/P9L3.png)
+
+#### Langkah 4: Panggil method di ElevatedButton
+![alt text](assets/P9L4.png)
+
+#### Langkah 5: Edit main.dart
+Ubah properti home
+![alt text](assets/P9L5.png)
+
+#### Langkah 6: Run
+Coba ganti warna background dengan widget dialog tersebut. Jika terjadi error, silakan diperbaiki. Jika berhasil, akan tampil seperti gambar berikut.
+![alt text](assets/P9L61.png)
+![alt text](assets/P9L62.png)
+![alt text](assets/P9L63.png)
+
+#### Soal 17
+Cobalah klik setiap button, apa yang terjadi ? Mengapa demikian ?
+Gantilah 3 warna pada langkah 3 dengan warna favorit Anda!
+Jawab: Ketika mengklik setiap tombol ("Amber", "Purple", atau "Blue") pada dialog di NavigationDialogScreen, masing-masing tombol akan mengubah nilai variabel color menjadi warna tertentu (misalnya Colors.amber.shade200 untuk tombol "Amber"). Setelah itu, dialog akan ditutup menggunakan Navigator.pop(context, color), yang mengirimkan nilai warna yang dipilih kembali ke NavigationDialogScreen. Setelah dialog ditutup, setState() dipanggil untuk memperbarui tampilan dan mengganti latar belakang layar menjadi warna yang dipilih. Hal ini terjadi karena setState() memberitahukan Flutter bahwa ada perubahan dalam status yang perlu diperbarui di UI. Jadi, ketika tombol dipilih, warna latar belakang aplikasi akan berubah sesuai dengan pilihan warna yang diinginkan oleh pengguna.
+
+Capture hasil praktikum Anda berupa GIF dan lampirkan di README. Lalu lakukan commit dengan pesan "W11: Soal 17".

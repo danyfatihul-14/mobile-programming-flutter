@@ -10,7 +10,7 @@ flutter pub add http
 ```
 
 #### Langkah 2 Cek file pubspec.yaml
-![alt text](image.png)
+![alt text](assets/P1L2.png)
 
 #### Langkah 3: Buka file main.dart
 Ketiklah kode seperti berikut ini.
@@ -73,3 +73,33 @@ Jawab:
 
 Capture hasil praktikum Anda berupa GIF dan lampirkan di README. Lalu lakukan commit dengan pesan "W11: Soal 4".
 ![alt text](assets/P2L4.png)
+
+### Praktikum 3: Menggunakan Completer di Future
+#### Langkah 1: Buka main.dart
+Pastikan telah impor package async berikut.
+![alt text](assets/P3L1.png)
+
+#### Langkah 2: Tambahkan variabel dan method
+Tambahkan variabel late dan method di class _FuturePageState seperti ini.
+![alt text](assets/P3L2.png)
+
+#### Langkah 3: Ganti isi kode onPressed()
+Tambahkan kode berikut pada fungsi onPressed(). Kode sebelumnya bisa Anda comment.
+![alt text](assets/P3L3.png)
+
+#### Langkah 4:
+Terakhir, run atau tekan F5 untuk melihat hasilnya jika memang belum running. Bisa juga lakukan hot restart jika aplikasi sudah running. Maka hasilnya akan seperti gambar berikut ini. Setelah 5 detik, maka angka 42 akan tampil.
+![alt text](assets/P3L4.png)
+
+#### Soal 5
+Jelaskan maksud kode langkah 2 tersebut!
+* Completer dideklarasikan dengan keyword late, yang berarti bahwa variabel ini akan diinisialisasi nanti sebelum digunakan.
+* Fungsi ini mengembalikan sebuah Future.
+* completer = Completer(); membuat instance baru dari Completer yang menghasilkan Future yang akan menghasilkan nilai integer (int).
+* calculate(); memanggil fungsi calculate untuk memulai perhitungan asinkron.
+* return completer.future; mengembalikan Future yang terkait dengan Completer ini.
+* Fungsi ini menunggu selama 5 detik menggunakan Future.delayed.
+* Setelah 5 detik, completer.complete(42); memanggil metode complete dari Completer untuk menyelesaikan Future yang terkait dan mengirimkan nilai 42.
+
+Capture hasil praktikum Anda berupa GIF dan lampirkan di README. Lalu lakukan commit dengan pesan "W11: Soal 5".
+![alt text](assets/P3L4.png)

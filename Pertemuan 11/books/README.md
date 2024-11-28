@@ -220,3 +220,29 @@ Apakah Anda mendapatkan koordinat GPS ketika run di browser? Mengapa demikian?
 Saat menjalankan aplikasi Flutter di browser, Anda tidak akan mendapatkan koordinat GPS karena browser tidak mendukung akses langsung ke hardware GPS perangkat. Geolocator, seperti banyak plugin lainnya, bergantung pada API yang menyediakan akses ke sensor perangkat (seperti GPS pada perangkat mobile atau tablet). Namun, browser tidak memberikan akses langsung ke informasi lokasi perangkat fisik melalui API yang sama yang digunakan di perangkat Android atau iOS.
 
 Capture hasil praktikum Anda berupa GIF dan lampirkan di README. Lalu lakukan commit dengan pesan "W11: Soal 12"
+
+### Praktikum 7: Manajemen Future dengan FutureBuilder
+#### Langkah 1: Modifikasi method getPosition()
+Buka file geolocation.dart kemudian ganti isi method dengan kode ini.
+![alt text](assets/P7L1.png)
+
+#### Langkah 2: Tambah variabel
+Tambah variabel ini di class _LocationScreenState
+![alt text](assets/P7L2.png)
+
+#### Langkah 3: Tambah initState()
+Tambah method ini dan set variabel position
+![alt text](assets/P7L3.png)
+
+#### Langkah 4: Edit method build()
+Ketik kode berikut dan sesuaikan. Kode lama bisa Anda comment atau hapus.
+![alt text](assets/P7L4.png)
+
+#### Soal 13
+Apakah ada perbedaan UI dengan praktikum sebelumnya? Mengapa demikian?
+Untuk UI nya tidak berubah tetapi disini membuat kode baru untuk penanganan error. Pada kode yang baru, terdapat penanganan kesalahan (error handling) menggunakan snapshot.hasError di dalam FutureBuilder. Jika terjadi kesalahan saat mengambil data lokasi, maka aplikasi akan menampilkan pesan error "Something terrible happened!".
+
+Capture hasil praktikum Anda berupa GIF dan lampirkan di README. Lalu lakukan commit dengan pesan "W11: Soal 13".
+![alt text](assets/P7S13.png)
+
+Seperti yang Anda lihat, menggunakan FutureBuilder lebih efisien, clean, dan reactive dengan Future bersama UI.

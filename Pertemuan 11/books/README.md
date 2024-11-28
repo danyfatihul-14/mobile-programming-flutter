@@ -40,3 +40,36 @@ Jawab: Ketika tombol ditekan, fungsi getData() dipanggil untuk mengambil data bu
 
 Capture hasil praktikum Anda berupa GIF dan lampirkan di README. Lalu lakukan commit dengan pesan "W11: Soal 3".
 ![alt text](assets/P1S3.png)
+
+### Praktikum 2: Menggunakan await/async untuk menghindari callbacks
+#### Langkah 1: Buka file main.dart
+Tambahkan tiga method berisi kode seperti berikut di dalam class _FuturePageState.
+![alt text](assets/P2L1.png)
+
+#### Langkah 2: Tambah method count()
+Lalu tambahkan lagi method ini di bawah ketiga method sebelumnya.
+![alt text](assets/P2L2.png)
+
+#### Langkah 3: Panggil count()
+Lakukan comment kode sebelumnya, ubah isi kode onPressed() menjadi seperti berikut.
+![alt text](assets/P2L3.png)
+
+#### Langkah 4: Run
+Akhirnya, run atau tekan F5 jika aplikasi belum running. Maka Anda akan melihat seperti gambar berikut, hasil angka 6 akan tampil setelah delay 9 detik.
+![alt text](assets/P2L4.png)
+
+#### Soal 4
+Jelaskan maksud kode langkah 1 dan 2 tersebut!
+Jawab: 
+* Future<int> menunjukkan bahwa fungsi ini mengembalikan objek Future yang menghasilkan nilai integer (int).
+* await Future.delayed(const Duration(seconds: 3)); menyebabkan fungsi ini menunggu selama 3 detik (mewakili penundaan atau operasi asinkron lainnya).
+* Setelah 3 detik, fungsi mengembalikan nilai integer (1, 2, atau 3 tergantung pada fungsinya).
+* Fungsi count adalah fungsi asinkron yang tidak mengembalikan nilai (void).
+* int total = 0; mendeklarasikan dan menginisialisasi variabel total dengan nilai 0.
+* total = await returnOneAsync(); menunggu sampai returnOneAsync selesai dan mengembalikan nilai 1, yang kemudian disimpan dalam total.
+* total += await returnTwoAsync(); menunggu sampai returnTwoAsync selesai dan menambahkan nilai 2 ke total.
+* total += await returnThreeAsync(); menunggu sampai returnThreeAsyncselesai dan menambahkan nilai 3 ke total.
+* Setelah semua operasi selesai, fungsi setState digunakan untuk memperbarui tampilan dengan mengubah nilai result menjadi total dari ketiga nilai tersebut dalam bentuk string.
+
+Capture hasil praktikum Anda berupa GIF dan lampirkan di README. Lalu lakukan commit dengan pesan "W11: Soal 4".
+![alt text](assets/P2L4.png)
